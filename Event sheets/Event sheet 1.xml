@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheet 1</name>
+    <events>
+        <variable constant="0" name="Mosquitos" sid="607323536329880" static="0" type="number">0</variable>
+        <variable constant="0" name="Macacos" sid="660767469218376" static="0" type="number">0</variable>
+        <event-block sid="699589951753312">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="507046148722969" type="System" />
+            </conditions>
+            <actions>
+                <action id="0" name="Set cursor style" sid="145081793283200" type="Mouse">
+                    <param id="0" name="Cursor style">1</param>
+                </action>
+                <action id="-9" name="Destroy" sid="410880537822113" type="lingua" />
+            </actions>
+            <sub-events>
+                <variable constant="0" name="magnitudeMax" sid="525281091860868" static="0" type="number">20</variable>
+                <variable constant="0" name="magnitudeMin" sid="330269791883421" static="0" type="number">50</variable>
+                <variable constant="0" name="speedMax" sid="402950234689569" static="0" type="number">400</variable>
+                <variable constant="0" name="speedMin" sid="481357852787898" static="0" type="number">100</variable>
+                <event-block sid="436888440039913">
+                    <conditions>
+                        <condition id="-11" name="For Each" sid="321142484908076" type="System">
+                            <param id="0" name="Object">Mosquito</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="113940435594818" type="Mosquito">
+                            <param id="0" name="Speed">random(speedMin,speedMax)</param>
+                        </action>
+                        <action behavior="Sine" id="2" name="Set magnitude" sid="833866050452334" type="Mosquito">
+                            <param id="0" name="Magnitude">random(magnitudeMin,magnitudeMax)</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-group description="" sid="950560147674604" title="Controles">
+            <sub-events>
+                <event-block sid="944844231279061">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="749119457921095" type="Keyboard">
+                            <param id="0" name="Key">65</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="936800616284631" type="Sapo">
+                            <param id="0" name="Control">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="910566253268172">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="120389210498633" type="Keyboard">
+                            <param id="0" name="Key">68</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="754261634733618" type="Sapo">
+                            <param id="0" name="Control">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="586660352964633">
+                    <conditions>
+                        <condition id="2" name="Key is down" sid="648686341081859" type="Keyboard">
+                            <param id="0" name="Key">87</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="449418532561230" type="Sapo">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="968742395462462" title="Mosquito">
+            <sub-events>
+                <variable constant="0" name="MosquitoSpaw" sid="780592129947200" static="0" type="number">2</variable>
+                <event-block sid="585022431561488">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="635878180607743" type="Mosquito">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">Sapo.Y</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="633805432307555" type="Mosquito">
+                            <param id="0" name="Angle">Mosquito.Angle*-1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="952590248279279">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="270880523192645" type="System">
+                            <param id="0" name="Interval (seconds)">1.0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="493711432795565" type="Mosquito">
+                            <param id="0" name="Width">Mosquito.Width*0.9</param>
+                        </action>
+                        <action id="-6" name="Set height" sid="803667906790376" type="Mosquito">
+                            <param id="0" name="Height">Mosquito.Height*0.9</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="805255708121023">
+                    <conditions>
+                        <condition id="-5" name="Compare width" sid="218649480429932" type="Mosquito">
+                            <param id="0" name="Comparison">3</param>
+                            <param id="1" name="Width">24</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Sine" id="0" name="Set active" sid="117555300528148" type="Mosquito">
+                            <param id="0" name="State">0</param>
+                        </action>
+                        <action id="-22" name="Set angle toward position" sid="586568984040288" type="Mosquito">
+                            <param id="0" name="X">Arvore.X</param>
+                            <param id="1" name="Y">Arvore.Y</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="615681775193128">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="754515755752162" type="Mosquito">
+                                    <param id="0" name="Object">Arvore</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Set value" sid="249586456905384" type="System">
+                                    <param id="0" name="Variable">Macacos</param>
+                                    <param id="1" name="Value">Macacos+1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="599883103259836" type="Macacos">
+                                    <param id="0" name="Text">&quot;Macacos Mortos : &quot;&amp;Macacos</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="877480427668542" type="Mosquito" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block disabled="1" sid="133581294098944">
+                    <conditions>
+                        <condition id="-6" name="Every X seconds" sid="573500562524765" type="System">
+                            <param id="0" name="Interval (seconds)">MosquitoSpaw</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="701181704333069" type="Mosquito">
+                            <param id="0" name="Object">Mosquito</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="591483358801989" title="Lingua">
+            <sub-events>
+                <event-block sid="378912519032817">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="429925639112717" type="lingua">
+                            <param id="0" name="Object">Mosquito</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="360672065108308" type="Mosquito" />
+                        <action id="0" name="Set text" sid="750000446116479" type="Mosquitos">
+                            <param id="0" name="Text">&quot;Mosquitos Comidos : &quot;&amp;Mosquitos</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="804869172993881" type="System">
+                            <param id="0" name="Variable">Mosquitos</param>
+                            <param id="1" name="Value">Mosquitos+1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="487988128977197">
+                    <conditions>
+                        <condition id="0" name="On click" sid="353863429829402" type="Mouse">
+                            <param id="0" name="Mouse button">0</param>
+                            <param id="1" name="Click type">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="871978400425222" type="lingua" />
+                        <action id="0" name="Spawn another object" sid="400938391661548" type="Sapo">
+                            <param id="0" name="Object">lingua</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">1</param>
+                        </action>
+                        <action id="-22" name="Set angle toward position" sid="260922264378391" type="lingua">
+                            <param id="0" name="X">Mouse.X</param>
+                            <param id="1" name="Y">Mouse.Y</param>
+                        </action>
+                        <action disabled="1" id="-5" name="Set width" sid="548345705799481" type="lingua">
+                            <param id="0" name="Width">distance(Sapo.X,Sapo.Y,Touch.X,Touch.Y)</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="259959384954396">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="550576919701730" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-4" name="Set position to another object" sid="342448178836031" type="lingua">
+                            <param id="0" name="Object">Sapo</param>
+                            <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+    </events>
+</c2eventsheet>
