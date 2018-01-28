@@ -31,10 +31,12 @@ you probably do not want to add any .uistate.xml files to the repository.-->
         <folder expanded="0" path="file-folder/Icons/" />
         <folder expanded="1" path="animation-folder/Sapo/" />
         <folder expanded="1" path="animation-folder/Mosquito/" />
-        <folder expanded="1" path="animation-folder/Arvore/" />
+        <folder expanded="1" path="animation-folder/Macaco/" />
         <folder expanded="1" path="animation-folder/lingua/" />
         <folder expanded="1" path="animation-folder/Sprite/" />
         <folder expanded="1" path="animation-folder/Spaw/" />
         <folder expanded="1" path="animation-folder/background/" />
+        <folder expanded="1" path="animation-folder/sra_regia/" />
+        <folder expanded="1" path="animation-folder/ss3_head_up/" />
     </folders-expanded>
 </c2uistate>
