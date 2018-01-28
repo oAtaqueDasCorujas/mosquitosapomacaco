@@ -6,19 +6,6 @@
         <variable constant="0" name="Mosquitos" sid="607323536329880" static="0" type="number">0</variable>
         <variable constant="0" name="Tempo" sid="866117414467752" static="0" type="number">0</variable>
         <variable constant="0" name="Macacos" sid="660767469218376" static="0" type="number">0</variable>
-        <event-block sid="671654145256531">
-            <conditions>
-                <condition id="-1" name="Compare X" sid="893235019969728" type="background_rivermud">
-                    <param id="0" name="Comparison">4</param>
-                    <param id="1" name="X co-ordinate">LayoutWidth/2</param>
-                </condition>
-            </conditions>
-            <actions>
-                <action behavior="Bullet" id="5" name="Set enabled" sid="126327110284169" type="background_rivermud">
-                    <param id="0" name="State">0</param>
-                </action>
-            </actions>
-        </event-block>
         <event-block sid="699589951753312">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="507046148722969" type="System" />
@@ -283,6 +270,46 @@
         </event-group>
         <event-group description="" sid="591483358801989" title="Sapo">
             <sub-events>
+                <event-block disabled="1" sid="498708020329203">
+                    <conditions>
+                        <condition behavior="Platform" id="2" name="Is on floor" sid="978520363344666" type="Sapo" />
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Set Y" sid="918301835065435" type="sra_regia">
+                            <param id="0" name="Y">sapo.Y+9</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block disabled="1" sid="408624686662324">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="425385383533323" type="System" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block disabled="1" sid="856870729392718">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="449867839249482" type="Onda">
+                                    <param id="0" name="Object">sra_regia</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="810139142861432" type="sra_regia">
+                                    <param id="0" name="Y">Onda.Y</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                        <event-block disabled="1" sid="515952967111542">
+                            <conditions>
+                                <condition id="-22" name="Else" sid="460355673876695" type="System" />
+                            </conditions>
+                            <actions>
+                                <action id="-2" name="Set Y" sid="127084741338635" type="sra_regia">
+                                    <param id="0" name="Y">399</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
                 <event-block sid="378912519032817">
                     <conditions>
                         <condition id="1" name="Is overlapping another object" sid="429925639112717" type="lingua">
@@ -441,6 +468,105 @@
                             <param id="1" name="From">1</param>
                         </action>
                     </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="796510433860244" title="Rio">
+            <sub-events>
+                <event-block sid="613997573452855">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="433551318967529" type="background_rivermud">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">LayoutWidth/2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Bullet" id="5" name="Set enabled" sid="126122820877394" type="background_rivermud">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="990657986898756">
+                    <conditions>
+                        <condition id="1" name="Is overlapping another object" sid="225007852593977" type="background_river_transition">
+                            <param id="0" name="Object">Sapo</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action behavior="Platform" id="7" name="Simulate control" sid="826575993135941" type="Sapo">
+                            <param id="0" name="Control">2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="671654145256531">
+                    <conditions>
+                        <condition id="-1" name="Compare X" sid="893235019969728" type="background_river_transition">
+                            <param id="0" name="Comparison">4</param>
+                            <param id="1" name="X co-ordinate">LayoutWidth+50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="126327110284169" type="background_river_transition" />
+                    </actions>
+                </event-block>
+                <variable constant="0" name="OndaSpaw" sid="889788703589732" static="0" type="number">6</variable>
+                <variable constant="0" name="magnitudeMax" sid="567124115682303" static="0" type="number">20</variable>
+                <variable constant="0" name="magnitudeMin" sid="300360546975873" static="0" type="number">50</variable>
+                <variable constant="0" name="speedMax" sid="868644505305884" static="0" type="number">400</variable>
+                <variable constant="0" name="speedMin" sid="976183950299055" static="0" type="number">100</variable>
+                <variable constant="0" name="maxY" sid="817047472874263" static="0" type="number">400</variable>
+                <variable constant="0" name="minY" sid="355970037534254" static="0" type="number">300</variable>
+                <variable constant="0" name="OndaSpaw2" sid="394137460919625" static="0" type="number">6</variable>
+                <event-block sid="496574836939215">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="878584510166254" type="System">
+                            <param id="0" name="Variable">Tempo</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">60</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="838084232852418" type="System">
+                            <param id="0" name="Layout">Layout 2</param>
+                        </action>
+                        <action id="-9" name="Set value" sid="236985883123217" type="System">
+                            <param id="0" name="Variable">Tempo</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="839174686604171">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="790026094098015" type="System">
+                            <param id="0" name="Variable">Tempo</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">30</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="658711822332803">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="770013376163601" type="System">
+                                    <param id="0" name="Interval (seconds)">OndaSpaw</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="176123652494505" type="System">
+                                    <param id="0" name="Object to create">Onda</param>
+                                    <param id="1" name="Layer">&quot;Fundo&quot;</param>
+                                    <param id="2" name="X">0</param>
+                                    <param id="3" name="Y">random(minY,maxY)</param>
+                                </action>
+                                <action behavior="Bullet" id="0" name="Set speed" sid="208173057207422" type="Onda">
+                                    <param id="0" name="Speed">random(speedMin,speedMax)</param>
+                                </action>
+                                <action behavior="Sine" id="2" name="Set magnitude" sid="657344251826171" type="Onda">
+                                    <param id="0" name="Magnitude">random(magnitudeMin,magnitudeMax)</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
             </sub-events>
         </event-group>

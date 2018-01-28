@@ -23,12 +23,14 @@
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="EightDir" version="1">8 Direction</behavior>
         <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
         <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
         <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="scrollto" version="1">Scroll To</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
         <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
     </used-behaviors>
@@ -299,7 +301,7 @@
         <object-type name="Function" sid="142960824725938">
             <plugin id="Function" />
         </object-type>
-        <object-type name="Sprite" sid="998807467891914">
+        <object-type name="Onda" sid="998807467891914">
             <plugin id="Sprite" />
             <behaviors>
                 <behavior-type name="Sine" sid="922813999475619">
@@ -317,16 +319,15 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="849701967130118" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                    <frame duration="1" hotspotX="0.501377" hotspotY="0" original-source="E:\git\mosquitosapomacaco\img\rascunhos\wave_001.png">
                         <collision-poly>
-                            <point x="0.31" y="0.248" />
-                            <point x="0.5" y="0.228" />
-                            <point x="0.63" y="0.296" />
-                            <point x="0.93" y="0.5" />
-                            <point x="0.735" y="0.788" />
-                            <point x="0.5" y="0.716" />
-                            <point x="0.305" y="0.756" />
-                            <point x="0.115" y="0.5" />
+                            <point x="0.498623" y="0.0558659" />
+                            <point x="0.721763" y="0" />
+                            <point x="0.895317" y="0.21229" />
+                            <point x="0.986226" y="0.497207" />
+                            <point x="0.988981" y="0.776536" />
+                            <point x="0.0247934" y="0.73743" />
+                            <point x="0.140496" y="0.497207" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -381,18 +382,19 @@
         </object-type>
         <object-type name="sra_regia" sid="969362726847826">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="514369446938917">
+                    <behavior id="Platform" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="160743355729218" speed="5">
                     <frame duration="1" hotspotX="0.501779" hotspotY="0.5" original-source="E:\git\mosquitosapomacaco\img\rascunhos\sra_regia.png">
                         <collision-poly>
-                            <point x="0.0604982" y="0.236111" />
+                            <point x="0.263345" y="0.319445" />
                             <point x="0.498221" y="0.0138889" />
-                            <point x="0.939502" y="0.236111" />
-                            <point x="1" y="0.5" />
-                            <point x="0.943061" y="0.777778" />
-                            <point x="0.498221" y="0.986111" />
-                            <point x="0.0604982" y="0.763889" />
-                            <point x="0.00711744" y="0.5" />
+                            <point x="0.69395" y="0.333333" />
+                            <point x="0.480427" y="0.625" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -574,13 +576,149 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="End_Transmission_bg_fios" sid="409774536529292">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="256986100081868" speed="5">
+                    <frame duration="1" hotspotX="0.500312" hotspotY="0.500551" original-source="E:\git\mosquitosapomacaco\img\rascunhos\End_Transmission_bg_fios.png">
+                        <collision-poly>
+                            <point x="0.0455396" y="0.0804851" />
+                            <point x="0.499688" y="0.00330761" />
+                            <point x="0.88272" y="0.207277" />
+                            <point x="0.88272" y="0.499449" />
+                            <point x="0.95446" y="0.919515" />
+                            <point x="0.499688" y="0.996692" />
+                            <point x="0.0917031" y="0.837927" />
+                            <point x="0.150967" y="0.499449" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="End_Transmission_pes" sid="791351762284452">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="8Direction" sid="179392608984361">
+                    <behavior id="EightDir" />
+                </behavior-type>
+                <behavior-type name="ScrollTo" sid="881008840580652">
+                    <behavior id="scrollto" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="847163225531311" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\git\mosquitosapomacaco\img\rascunhos\End_Transmission_pes00.png">
+                        <collision-poly>
+                            <point x="0.626374" y="0.373626" />
+                            <point x="0.692308" y="0.5" />
+                            <point x="0.620879" y="0.620879" />
+                            <point x="0.5" y="0.93956" />
+                            <point x="0.346154" y="0.653846" />
+                            <point x="0.32967" y="0.5" />
+                            <point x="0.346154" y="0.346154" />
+                            <point x="0.5" y="0.0604396" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.502732" original-source="E:\git\mosquitosapomacaco\img\rascunhos\End_Transmission_pes01.png">
+                        <collision-poly>
+                            <point x="0.692308" y="0.497268" />
+                            <point x="0.620879" y="0.622951" />
+                            <point x="0.5" y="0.939891" />
+                            <point x="0.346154" y="0.655738" />
+                            <point x="0.32967" y="0.497268" />
+                            <point x="0.346154" y="0.344262" />
+                            <point x="0.5" y="0.0983607" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\git\mosquitosapomacaco\img\rascunhos\End_Transmission_pes02.png">
+                        <collision-poly>
+                            <point x="0.692308" y="0.5" />
+                            <point x="0.626374" y="0.626374" />
+                            <point x="0.5" y="0.950549" />
+                            <point x="0.351648" y="0.648352" />
+                            <point x="0.335165" y="0.5" />
+                            <point x="0.346154" y="0.346154" />
+                            <point x="0.5" y="0.115385" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="End_Transmission_fg" sid="238800229740488">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="710602147647438">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="437195434690490" speed="5">
+                    <frame duration="1" hotspotX="0.500104" hotspotY="0.500185" original-source="E:\git\mosquitosapomacaco\img\rascunhos\End_Transmission_fg.png">
+                        <collision-poly>
+                            <point x="0.00020829" y="0.000370233" />
+                            <point x="0.999792" y="0.000370233" />
+                            <point x="0.999792" y="0.99963" />
+                            <point x="0.00020829" y="0.99963" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="End_Transmission_fio_ruim" sid="773608031883251">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="2" loop="0" name="Default" pingpong="0" repeatcount="0" repeatto="0" sid="380038668873937" speed="0">
+                    <frame duration="1" hotspotX="0.503817" hotspotY="0.508772" original-source="E:\git\mosquitosapomacaco\img\rascunhos\End_Transmission_fio_ruim.png">
+                        <collision-poly>
+                            <point x="0.19084" y="0.438596" />
+                            <point x="0.496183" y="0.0350877" />
+                            <point x="0.816794" y="0.421053" />
+                            <point x="1" y="0.491228" />
+                            <point x="0.832061" y="0.614035" />
+                            <point x="0.496183" y="0.912281" />
+                            <point x="0.152672" y="0.649123" />
+                            <point x="0" y="0.491228" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.503817" hotspotY="0.52" original-source="E:\git\mosquitosapomacaco\img\rascunhos\End_Transmission_fio_bom.png" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Onda2" sid="224401349524065">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="305966614437763" speed="5">
+                    <frame duration="1" hotspotX="0.501377" hotspotY="0" original-source="E:\git\mosquitosapomacaco\img\rascunhos\wave_001.png">
+                        <collision-poly>
+                            <point x="0.498623" y="0.0558659" />
+                            <point x="0.721763" y="0" />
+                            <point x="0.895317" y="0.21229" />
+                            <point x="0.986226" y="0.497207" />
+                            <point x="0.988981" y="0.776536" />
+                            <point x="0.0247934" y="0.73743" />
+                            <point x="0.140496" y="0.497207" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Reparos" sid="398594179455857">
+            <plugin id="Text" />
+            <behaviors>
+                <behavior-type name="Pin" sid="207105955083812">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
+        <layout>Layout 2.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
+        <event-sheet>Event sheet 2.xml</event-sheet>
     </event-folder>
     <global-instances>
         <global-instance type="Keyboard" uid="4" />
