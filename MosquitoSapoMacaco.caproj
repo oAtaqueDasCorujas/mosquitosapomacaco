@@ -18,10 +18,12 @@
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
         <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+        <plugin author="Scirra" id="shadowlight" version="1">Shadow Light</plugin>
     </used-plugins>
     <used-behaviors>
         <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
-        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Fade" version="1">Fade</behavior>
+        <behavior author="Scirra" id="Physics" version="1">Physics</behavior>
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
@@ -67,18 +69,109 @@
                 </behavior-type>
             </behaviors>
             <animation-folder>
-                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="676379260840186" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.88806" original-source="E:\git\mosquitosapomacaco\img\rascunhos\ss2_all.png">
-                        <image-point name="Lingua" x="0.503906" y="0.380597" />
+                <animation framecount="2" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="676379260840186" speed="4">
+                    <frame duration="1" hotspotX="0.50137" hotspotY="0.888158" original-source="E:\git\mosquitosapomacaco\img\rascunhos\ss_iddle00.png">
+                        <image-point name="Lingua" x="0.50411" y="0.618421" />
                         <collision-poly>
-                            <point x="0.503572" y="0" />
-                            <point x="1" y="0.283582" />
-                            <point x="0.746428" y="0.932836" />
-                            <point x="0.598214" y="0.955224" />
-                            <point x="0.503571" y="0.738806" />
-                            <point x="0.414286" y="0.936567" />
-                            <point x="0.228571" y="0.925373" />
-                            <point x="0" y="0.261194" />
+                            <point x="0.490411" y="0.506579" />
+                            <point x="0.893151" y="0.570724" />
+                            <point x="0.654794" y="0.957237" />
+                            <point x="0.493151" y="0.865132" />
+                            <point x="0.342466" y="0.944079" />
+                            <point x="0.0917808" y="0.578948" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.50137" hotspotY="0.888158" original-source="E:\git\mosquitosapomacaco\img\rascunhos\ss_iddle01.png">
+                        <image-point name="Lingua" x="0.50411" y="0.559211" />
+                        <collision-poly>
+                            <point x="0.490411" y="0.506579" />
+                            <point x="0.893151" y="0.570724" />
+                            <point x="0.654794" y="0.957237" />
+                            <point x="0.493151" y="0.865132" />
+                            <point x="0.342466" y="0.944079" />
+                            <point x="0.0917808" y="0.578948" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="2" loop="0" name="Jump" pingpong="0" repeatcount="1" repeatto="0" sid="355319338025004" speed="10">
+                    <frame duration="1" hotspotX="0.50137" hotspotY="0.888158" original-source="E:\git\mosquitosapomacaco\img\rascunhos\ss_jump00.png">
+                        <image-point name="Lingua" x="0.50411" y="0.618421" />
+                        <collision-poly>
+                            <point x="0.490411" y="0.506579" />
+                            <point x="0.893151" y="0.570724" />
+                            <point x="0.654794" y="0.957237" />
+                            <point x="0.493151" y="0.865132" />
+                            <point x="0.342466" y="0.944079" />
+                            <point x="0.0917808" y="0.578948" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.50137" hotspotY="0.888158" original-source="E:\git\mosquitosapomacaco\img\rascunhos\ss_jump01.png">
+                        <image-point name="Lingua" x="0.50411" y="0.3125" />
+                        <collision-poly>
+                            <point x="0.580822" y="0.197369" />
+                            <point x="0.687671" y="0.682566" />
+                            <point x="0.654794" y="0.957237" />
+                            <point x="0.493151" y="0.865132" />
+                            <point x="0.342466" y="0.944079" />
+                            <point x="0.319863" y="0.657895" />
+                            <point x="0.417808" y="0.213816" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+                <animation framecount="5" loop="0" name="Fall" pingpong="0" repeatcount="1" repeatto="0" sid="174359327096159" speed="7">
+                    <frame duration="1" hotspotX="0.50137" hotspotY="0.888158" original-source="E:\git\mosquitosapomacaco\img\rascunhos\ss_jump02.png">
+                        <image-point name="Lingua" x="0.50137" y="0.355263" />
+                        <collision-poly>
+                            <point x="0.509589" y="0.263158" />
+                            <point x="0.791781" y="0.15625" />
+                            <point x="0.654794" y="0.957237" />
+                            <point x="0.493151" y="0.865132" />
+                            <point x="0.342466" y="0.944079" />
+                            <point x="0.20137" y="0.154605" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.50137" hotspotY="0.888158" original-source="E:\git\mosquitosapomacaco\img\rascunhos\ss_jump03.png">
+                        <image-point name="Lingua" x="0.50137" y="0.493421" />
+                        <collision-poly>
+                            <point x="0.490411" y="0.384869" />
+                            <point x="0.876712" y="0.386513" />
+                            <point x="0.654794" y="0.957237" />
+                            <point x="0.493151" y="0.865132" />
+                            <point x="0.342466" y="0.944079" />
+                            <point x="0.113699" y="0.381579" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.50137" hotspotY="0.888158" original-source="E:\git\mosquitosapomacaco\img\rascunhos\ss_jump04.png">
+                        <image-point name="Lingua" x="0.50137" y="0.496711" />
+                        <collision-poly>
+                            <point x="0.50137" y="0.401316" />
+                            <point x="0.865754" y="0.373355" />
+                            <point x="0.654794" y="0.957237" />
+                            <point x="0.493151" y="0.865132" />
+                            <point x="0.342466" y="0.944079" />
+                            <point x="0.121918" y="0.384869" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.50137" hotspotY="0.888158" original-source="E:\git\mosquitosapomacaco\img\rascunhos\ss_jump05.png">
+                        <image-point name="Lingua" x="0.50137" y="0.559211" />
+                        <collision-poly>
+                            <point x="0.49863" y="0.453948" />
+                            <point x="0.90411" y="0.495066" />
+                            <point x="0.654794" y="0.957237" />
+                            <point x="0.493151" y="0.865132" />
+                            <point x="0.342466" y="0.944079" />
+                            <point x="0.0945205" y="0.519737" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.50137" hotspotY="0.888158" original-source="E:\git\mosquitosapomacaco\img\rascunhos\ss_jump06.png">
+                        <image-point name="Lingua" x="0.50137" y="0.615132" />
+                        <collision-poly>
+                            <point x="0.490411" y="0.506579" />
+                            <point x="0.893151" y="0.570724" />
+                            <point x="0.654794" y="0.957237" />
+                            <point x="0.493151" y="0.865132" />
+                            <point x="0.342466" y="0.944079" />
+                            <point x="0.0917808" y="0.578948" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -101,9 +194,6 @@
                 </behavior-type>
                 <behavior-type name="Bullet" sid="304051464438396">
                     <behavior id="Bullet" />
-                </behavior-type>
-                <behavior-type name="Pathfinding" sid="277460789099107">
-                    <behavior id="Pathfinding" />
                 </behavior-type>
                 <behavior-type name="Wrap" sid="704339064569983">
                     <behavior id="wrap" />
@@ -146,8 +236,19 @@
                 </animation>
             </animation-folder>
         </object-type>
-        <object-type name="Arvore" sid="354313221722437">
+        <object-type name="Macaco" sid="354313221722437">
             <plugin id="Sprite" />
+            <instance-variables>
+                <instance-variable name="YInicial" sid="240629429520902" type="number" />
+            </instance-variables>
+            <behaviors>
+                <behavior-type name="Physics" sid="118644188147202">
+                    <behavior id="Physics" />
+                </behavior-type>
+                <behavior-type name="Fade" sid="539281014081072">
+                    <behavior id="Fade" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="438590178336702" speed="5">
                     <frame duration="1" hotspotX="0.5" hotspotY="0.5">
@@ -261,12 +362,140 @@
             <plugin id="Sprite" />
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="913232755125010" speed="5">
-                    <frame duration="1" hotspotX="0.500312" hotspotY="0.500555" original-source="E:\git\mosquitosapomacaco\img\rascunhos\background.png">
+                    <frame duration="1" hotspotX="0.500312" hotspotY="0.500555" original-source="E:\git\mosquitosapomacaco\img\rascunhos\background_fundo.png">
                         <collision-poly>
                             <point x="0.00062461" y="0.00110988" />
                             <point x="0.999375" y="0.00110988" />
                             <point x="1" y="1" />
                             <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ShadowLight" sid="458029768086857">
+            <plugin id="shadowlight" />
+        </object-type>
+        <object-type name="sra_regia" sid="969362726847826">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="160743355729218" speed="5">
+                    <frame duration="1" hotspotX="0.501779" hotspotY="0.5" original-source="E:\git\mosquitosapomacaco\img\rascunhos\sra_regia.png">
+                        <collision-poly>
+                            <point x="0.0604982" y="0.236111" />
+                            <point x="0.498221" y="0.0138889" />
+                            <point x="0.939502" y="0.236111" />
+                            <point x="1" y="0.5" />
+                            <point x="0.943061" y="0.777778" />
+                            <point x="0.498221" y="0.986111" />
+                            <point x="0.0604982" y="0.763889" />
+                            <point x="0.00711744" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="ss3_head_up" sid="769657956187467">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="597516178167534" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\git\mosquitosapomacaco\img\rascunhos\ss3_head_up.png">
+                        <collision-poly>
+                            <point x="0.289855" y="0.289855" />
+                            <point x="0.5" y="0.26087" />
+                            <point x="0.710145" y="0.289855" />
+                            <point x="0.76087" y="0.5" />
+                            <point x="0.702899" y="0.702899" />
+                            <point x="0.5" y="0.753623" />
+                            <point x="0.297101" y="0.702899" />
+                            <point x="0.23913" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="tree" sid="210416806456336">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="947289874817513" speed="5">
+                    <frame duration="1" hotspotX="0.501114" hotspotY="0.50084" original-source="E:\git\mosquitosapomacaco\img\rascunhos\tree02.png">
+                        <collision-poly>
+                            <point x="0.209354" y="0.157983" />
+                            <point x="0.498886" y="0.105882" />
+                            <point x="0.799555" y="0.151261" />
+                            <point x="0.953229" y="0.49916" />
+                            <point x="0.66147" y="0.744538" />
+                            <point x="0.498886" y="0.976471" />
+                            <point x="0.503341" y="0.620168" />
+                            <point x="0.0512249" y="0.49916" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="tree2" sid="552353647889404">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="185859618017881" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" original-source="E:\git\mosquitosapomacaco\img\rascunhos\tree03.png">
+                        <collision-poly>
+                            <point x="0.160072" y="0.164207" />
+                            <point x="0.5" y="0.0369004" />
+                            <point x="0.847122" y="0.156827" />
+                            <point x="0.564748" y="0.5" />
+                            <point x="0.555755" y="0.54428" />
+                            <point x="0.5" y="0.97786" />
+                            <point x="0.397482" y="0.592251" />
+                            <point x="0.138489" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="tree3" sid="474270803062042">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="415304769132911" speed="5">
+                    <frame duration="1" hotspotX="0.500849" hotspotY="0.5" original-source="E:\git\mosquitosapomacaco\img\rascunhos\tree01.png">
+                        <collision-poly>
+                            <point x="0.110357" y="0.105863" />
+                            <point x="0.499151" y="0.0309446" />
+                            <point x="0.855688" y="0.138436" />
+                            <point x="0.663837" y="0.5" />
+                            <point x="0.563667" y="0.581433" />
+                            <point x="0.499151" y="0.964169" />
+                            <point x="0.397284" y="0.618892" />
+                            <point x="0.0118845" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="background_river" sid="158804860251343">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="435387421364561" speed="5">
+                    <frame duration="1" hotspotX="0.500312" hotspotY="0.502618" original-source="E:\git\mosquitosapomacaco\img\rascunhos\background_river.png">
+                        <collision-poly>
+                            <point x="0.00062461" y="0.0052356" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.00062461" y="0.994764" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="background_rivermud" sid="405516585109927">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="134095484715395" speed="5">
+                    <frame duration="1" hotspotX="0.500312" hotspotY="0.5" original-source="E:\git\mosquitosapomacaco\img\rascunhos\background_rivermud.png">
+                        <collision-poly>
+                            <point x="0.00062461" y="0.00373134" />
+                            <point x="1" y="0" />
+                            <point x="1" y="1" />
+                            <point x="0.00062461" y="0.996269" />
                         </collision-poly>
                     </frame>
                 </animation>

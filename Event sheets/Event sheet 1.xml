@@ -15,6 +15,10 @@
                     <param id="0" name="Cursor style">1</param>
                 </action>
                 <action id="-9" name="Destroy" sid="410880537822113" type="lingua" />
+                <action id="-10" name="Set value" sid="611215155170576" type="Macaco">
+                    <param id="0" name="Instance variable">YInicial</param>
+                    <param id="1" name="Value">Macaco.Y</param>
+                </action>
             </actions>
             <sub-events>
                 <variable constant="0" name="magnitudeMax" sid="525281091860868" static="0" type="number">20</variable>
@@ -78,6 +82,53 @@
                 </event-block>
             </sub-events>
         </event-group>
+        <event-group description="" sid="925504614094116" title="Macaco">
+            <sub-events>
+                <event-block sid="110693813846799">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="993881406775542" type="Macaco" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="727627104209982" type="Macaco">
+                            <param id="0" name="Instance variable">YInicial</param>
+                            <param id="1" name="Value">Macaco.Y</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="507542383724043">
+                    <conditions>
+                        <condition id="-2" name="Compare Y" sid="494775232083313" type="Macaco">
+                            <param id="0" name="Comparison">5</param>
+                            <param id="1" name="Y co-ordinate">300</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-8" name="Set angle" sid="722890543367624" type="Macaco">
+                            <param id="0" name="Angle">90</param>
+                        </action>
+                        <action behavior="Physics" id="27" name="Set enabled" sid="737885625525577" type="Macaco">
+                            <param id="0" name="Mode">0</param>
+                        </action>
+                        <action behavior="Fade" id="1" name="Start fade" sid="999189582218920" type="Macaco" />
+                    </actions>
+                    <sub-events>
+                        <event-block sid="929423190627501">
+                            <conditions>
+                                <condition behavior="Fade" id="0" name="On fade-out finished" sid="631632352052049" type="Macaco" />
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="325702961395155" type="System">
+                                    <param id="0" name="Object to create">Macaco</param>
+                                    <param id="1" name="Layer">&quot;Jogo&quot;</param>
+                                    <param id="2" name="X">Macaco.X</param>
+                                    <param id="3" name="Y">Macaco.YInicial</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
         <event-group description="" sid="968742395462462" title="Mosquito">
             <sub-events>
                 <variable constant="0" name="MosquitoSpaw" sid="780592129947200" static="0" type="number">5</variable>
@@ -128,15 +179,15 @@
                             <param id="0" name="State">0</param>
                         </action>
                         <action id="-22" name="Set angle toward position" sid="586568984040288" type="Mosquito">
-                            <param id="0" name="X">Arvore.X</param>
-                            <param id="1" name="Y">Arvore.Y</param>
+                            <param id="0" name="X">Macaco.X</param>
+                            <param id="1" name="Y">Macaco.Y</param>
                         </action>
                     </actions>
                     <sub-events>
                         <event-block sid="615681775193128">
                             <conditions>
                                 <condition id="1" name="Is overlapping another object" sid="754515755752162" type="Mosquito">
-                                    <param id="0" name="Object">Arvore</param>
+                                    <param id="0" name="Object">Macaco</param>
                                 </condition>
                             </conditions>
                             <actions>
@@ -148,6 +199,9 @@
                                     <param id="0" name="Text">&quot;Macacos Mortos : &quot;&amp;Macacos</param>
                                 </action>
                                 <action id="-9" name="Destroy" sid="877480427668542" type="Mosquito" />
+                                <action behavior="Physics" id="27" name="Set enabled" sid="752014199729839" type="Macaco">
+                                    <param id="0" name="Mode">1</param>
+                                </action>
                             </actions>
                         </event-block>
                     </sub-events>
@@ -180,9 +234,32 @@
                         </action>
                     </actions>
                 </event-block>
+                <event-block sid="589815114583977">
+                    <conditions>
+                        <condition id="-13" name="Is between angles" sid="420354085560353" type="Mosquito">
+                            <param id="0" name="First angle">90</param>
+                            <param id="1" name="Second angle">180</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Set flipped" sid="564454539902408" type="Mosquito">
+                            <param id="0" name="State">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="703149188158237">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="927736845500771" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="8" name="Set flipped" sid="642685844960149" type="Mosquito">
+                            <param id="0" name="State">1</param>
+                        </action>
+                    </actions>
+                </event-block>
             </sub-events>
         </event-group>
-        <event-group description="" sid="591483358801989" title="Lingua">
+        <event-group description="" sid="591483358801989" title="Sapo">
             <sub-events>
                 <event-block sid="378912519032817">
                     <conditions>
@@ -237,6 +314,11 @@
                     </conditions>
                     <actions>
                         <action id="-9" name="Destroy" sid="871978400425222" type="lingua" />
+                        <action id="0" name="Spawn another object" sid="978307490845696" type="Sapo">
+                            <param id="0" name="Object">ss3_head_up</param>
+                            <param id="1" name="Layer">&quot;Jogo&quot;</param>
+                            <param id="2" name="Image point">&quot;Lingua&quot;</param>
+                        </action>
                         <action id="0" name="Spawn another object" sid="400938391661548" type="Sapo">
                             <param id="0" name="Object">lingua</param>
                             <param id="1" name="Layer">&quot;Jogo&quot;</param>
@@ -256,9 +338,85 @@
                         <condition id="-1" name="Every tick" sid="550576919701730" type="System" />
                     </conditions>
                     <actions>
+                        <action id="-1" name="Set X" sid="692442300607439" type="sra_regia">
+                            <param id="0" name="X">Sapo.X</param>
+                        </action>
                         <action id="-4" name="Set position to another object" sid="342448178836031" type="lingua">
                             <param id="0" name="Object">Sapo</param>
                             <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="222256062625269">
+                    <conditions>
+                        <condition id="2" name="Is playing" sid="679158646663649" type="lingua">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="172370679399766" type="ss3_head_up">
+                            <param id="0" name="Visibility">1</param>
+                        </action>
+                        <action id="-4" name="Set position to another object" sid="881744504125339" type="ss3_head_up">
+                            <param id="0" name="Object">Sapo</param>
+                            <param id="1" name="Image point (optional)">&quot;Lingua&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="412791654929531">
+                    <conditions>
+                        <condition id="3" name="Compare frame" sid="433763807240028" type="lingua">
+                            <param id="0" name="Comparison">0</param>
+                            <param id="1" name="Number">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-15" name="Set visible" sid="165007787875027" type="ss3_head_up">
+                            <param id="0" name="Visibility">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="220662633836120">
+                    <conditions>
+                        <condition behavior="Platform" id="5" name="On jump" sid="772064886621941" type="Sapo" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="331347962967175" type="Sapo">
+                            <param id="0" name="Animation">&quot;Jump&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="504927022428627">
+                    <conditions>
+                        <condition behavior="Platform" id="6" name="On fall" sid="154359691367906" type="Sapo" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="683046146929811" type="Sapo">
+                            <param id="0" name="Animation">&quot;Fall&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="133583253830138">
+                    <conditions>
+                        <condition behavior="Platform" id="8" name="On moved" sid="686902357161062" type="Sapo" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="138694208341136" type="Sapo">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="364220718545995">
+                    <conditions>
+                        <condition behavior="Platform" id="7" name="On stopped" sid="757250038670050" type="Sapo" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="422160640137216" type="Sapo">
+                            <param id="0" name="Animation">&quot;Default&quot;</param>
+                            <param id="1" name="From">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -287,6 +445,9 @@
                         </action>
                         <action behavior="Sine" id="2" name="Set magnitude" sid="867938881720511" type="Mosquito">
                             <param id="0" name="Magnitude">random(magnitudeMin,magnitudeMax)</param>
+                        </action>
+                        <action disabled="1" id="-8" name="Set angle" sid="470000783526338" type="Mosquito">
+                            <param id="0" name="Angle">random(0,180)</param>
                         </action>
                     </actions>
                 </event-block>
