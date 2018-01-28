@@ -25,6 +25,7 @@
         <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
         <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
         <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
         <behavior author="Scirra" id="solid" version="1">Solid</behavior>
         <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
     </used-behaviors>
@@ -38,13 +39,15 @@
     </window-size>
     <pixel-rounding>0</pixel-rounding>
     <preview-effects>1</preview-effects>
+    <first-layout>Layout 1</first-layout>
     <use-loader-layout>0</use-loader-layout>
     <configuration-settings>
         <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
         <prop name="Enable WebGL">On</prop>
         <prop name="Fullscreen in browser">Letterbox scale</prop>
         <prop name="Fullscreen scaling">High quality</prop>
-        <prop name="Loader style">Progress bar &amp; logo</prop>
+        <prop name="Loader style">Percentage text</prop>
         <prop name="Orientations">Landscape</prop>
         <prop name="Pause on unfocus">No</prop>
         <prop name="Physics engine">Box2D asm.js</prop>
@@ -58,6 +61,9 @@
             <behaviors>
                 <behavior-type name="Platform" sid="443610275041094">
                     <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="526824280862851">
+                    <behavior id="bound" />
                 </behavior-type>
             </behaviors>
             <animation-folder>
@@ -234,10 +240,6 @@
         <object-type name="Tempo" sid="405624075519505">
             <plugin id="Text" />
         </object-type>
-        <object-type name="TiledBackground2" sid="806395473523925">
-            <plugin id="TiledBg" />
-            <texture />
-        </object-type>
         <object-type name="Spaw" sid="714379415202698">
             <plugin id="Sprite" />
             <behaviors>
@@ -254,6 +256,21 @@
         <object-type name="Particles" sid="133678674734915">
             <plugin id="Particles" />
             <texture />
+        </object-type>
+        <object-type name="background" sid="957921403672386">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="913232755125010" speed="5">
+                    <frame duration="1" hotspotX="0.500312" hotspotY="0.500555" original-source="E:\git\mosquitosapomacaco\img\rascunhos\background.png">
+                        <collision-poly>
+                            <point x="0.00062461" y="0.00110988" />
+                            <point x="0.999375" y="0.00110988" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
         </object-type>
     </object-folder>
     <families />

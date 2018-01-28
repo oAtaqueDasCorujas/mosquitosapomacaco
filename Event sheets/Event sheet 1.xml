@@ -120,7 +120,7 @@
                     <conditions>
                         <condition id="-5" name="Compare width" sid="218649480429932" type="Mosquito">
                             <param id="0" name="Comparison">3</param>
-                            <param id="1" name="Width">24</param>
+                            <param id="1" name="Width">32</param>
                         </condition>
                     </conditions>
                     <actions>
@@ -191,24 +191,42 @@
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Spawn another object" sid="560079208676513" type="Mosquito">
-                            <param id="0" name="Object">Particles</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="Image point">0</param>
+                        <action id="-22" name="Set angle toward position" sid="793568395178917" type="Mosquito">
+                            <param id="0" name="X">Sapo.X</param>
+                            <param id="1" name="Y">Sapo.Y</param>
                         </action>
-                        <action id="-9" name="Destroy" sid="360672065108308" type="Mosquito" />
-                        <action id="-10" name="Add to" sid="804869172993881" type="System">
-                            <param id="0" name="Variable">Mosquitos</param>
-                            <param id="1" name="Value">1</param>
-                        </action>
-                        <action id="0" name="Set text" sid="750000446116479" type="Mosquitos">
-                            <param id="0" name="Text">&quot;Mosquitos Comidos : &quot;&amp;Mosquitos</param>
-                        </action>
-                        <action id="0" name="Call function" sid="605661269963088" type="Function">
-                            <param id="0" name="Name">&quot;Mosquito&quot;</param>
-                            <param id="1" name="Parameter {n}"></param>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="369467038650870" type="Mosquito">
+                            <param id="0" name="Speed">Mosquito.Bullet.Speed*1.5</param>
                         </action>
                     </actions>
+                    <sub-events>
+                        <event-block sid="165768414501170">
+                            <conditions>
+                                <condition id="1" name="Is overlapping another object" sid="211135087804070" type="Mosquito">
+                                    <param id="0" name="Object">Sapo</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-9" name="Destroy" sid="360672065108308" type="Mosquito" />
+                                <action id="-10" name="Add to" sid="804869172993881" type="System">
+                                    <param id="0" name="Variable">Mosquitos</param>
+                                    <param id="1" name="Value">1</param>
+                                </action>
+                                <action id="0" name="Set text" sid="750000446116479" type="Mosquitos">
+                                    <param id="0" name="Text">&quot;Mosquitos Comidos : &quot;&amp;Mosquitos</param>
+                                </action>
+                                <action id="0" name="Call function" sid="605661269963088" type="Function">
+                                    <param id="0" name="Name">&quot;Mosquito&quot;</param>
+                                    <param id="1" name="Parameter {n}"></param>
+                                </action>
+                                <action disabled="1" id="0" name="Spawn another object" sid="703210355159396" type="Mosquito">
+                                    <param id="0" name="Object">Particles</param>
+                                    <param id="1" name="Layer">&quot;Jogo&quot;</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
                 </event-block>
                 <event-block sid="487988128977197">
                     <conditions>
@@ -221,7 +239,7 @@
                         <action id="-9" name="Destroy" sid="871978400425222" type="lingua" />
                         <action id="0" name="Spawn another object" sid="400938391661548" type="Sapo">
                             <param id="0" name="Object">lingua</param>
-                            <param id="1" name="Layer">0</param>
+                            <param id="1" name="Layer">&quot;Jogo&quot;</param>
                             <param id="2" name="Image point">1</param>
                         </action>
                         <action id="-22" name="Set angle toward position" sid="260922264378391" type="lingua">
@@ -261,7 +279,7 @@
                     <actions>
                         <action id="0" name="Spawn another object" sid="558972247970495" type="Spaw">
                             <param id="0" name="Object">Mosquito</param>
-                            <param id="1" name="Layer">0</param>
+                            <param id="1" name="Layer">&quot;Jogo&quot;</param>
                             <param id="2" name="Image point">0</param>
                         </action>
                         <action behavior="Bullet" id="0" name="Set speed" sid="329245955604474" type="Mosquito">
