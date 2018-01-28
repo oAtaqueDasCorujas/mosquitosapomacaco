@@ -6,6 +6,19 @@
         <variable constant="0" name="Mosquitos" sid="607323536329880" static="0" type="number">0</variable>
         <variable constant="0" name="Tempo" sid="866117414467752" static="0" type="number">0</variable>
         <variable constant="0" name="Macacos" sid="660767469218376" static="0" type="number">0</variable>
+        <event-block sid="671654145256531">
+            <conditions>
+                <condition id="-1" name="Compare X" sid="893235019969728" type="background_rivermud">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="X co-ordinate">LayoutWidth/2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Bullet" id="5" name="Set enabled" sid="126327110284169" type="background_rivermud">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
         <event-block sid="699589951753312">
             <conditions>
                 <condition id="-2" name="On start of layout" sid="507046148722969" type="System" />
@@ -18,6 +31,15 @@
                 <action id="-10" name="Set value" sid="611215155170576" type="Macaco">
                     <param id="0" name="Instance variable">YInicial</param>
                     <param id="1" name="Value">Macaco.Y</param>
+                </action>
+                <action id="0" name="Set text" sid="189708644460640" type="Tempo">
+                    <param id="0" name="Text">Tempo</param>
+                </action>
+                <action id="0" name="Set text" sid="588894147999317" type="Mosquitos">
+                    <param id="0" name="Text">Mosquitos</param>
+                </action>
+                <action id="0" name="Set text" sid="572100873291402" type="Macacos">
+                    <param id="0" name="Text">Macacos</param>
                 </action>
             </actions>
             <sub-events>
@@ -119,7 +141,7 @@
                             <actions>
                                 <action id="-3" name="Create object" sid="325702961395155" type="System">
                                     <param id="0" name="Object to create">Macaco</param>
-                                    <param id="1" name="Layer">&quot;Jogo&quot;</param>
+                                    <param id="1" name="Layer">&quot;Fundo&quot;</param>
                                     <param id="2" name="X">Macaco.X</param>
                                     <param id="3" name="Y">Macaco.YInicial</param>
                                 </action>
@@ -196,7 +218,7 @@
                                     <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="0" name="Set text" sid="599883103259836" type="Macacos">
-                                    <param id="0" name="Text">&quot;Macacos Mortos : &quot;&amp;Macacos</param>
+                                    <param id="0" name="Text">Macacos</param>
                                 </action>
                                 <action id="-9" name="Destroy" sid="877480427668542" type="Mosquito" />
                                 <action behavior="Physics" id="27" name="Set enabled" sid="752014199729839" type="Macaco">
@@ -290,7 +312,7 @@
                                     <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="0" name="Set text" sid="750000446116479" type="Mosquitos">
-                                    <param id="0" name="Text">&quot;Mosquitos Comidos : &quot;&amp;Mosquitos</param>
+                                    <param id="0" name="Text">Mosquitos</param>
                                 </action>
                                 <action id="0" name="Call function" sid="605661269963088" type="Function">
                                     <param id="0" name="Name">&quot;Mosquito&quot;</param>

@@ -10,6 +10,7 @@
     <unique-id>2m2oqhlgof90t</unique-id>
     <saved-with-version>25200</saved-with-version>
     <used-plugins>
+        <plugin author="Scirra" id="Audio" version="1">Audio</plugin>
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
@@ -251,11 +252,13 @@
             </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="438590178336702" speed="5">
-                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                    <frame duration="1" hotspotX="0.504274" hotspotY="0.502618" original-source="E:\git\mosquitosapomacaco\img\rascunhos\macaco_normal.png">
                         <collision-poly>
-                            <point x="0.34375" y="0.15625" />
-                            <point x="0.65625" y="0.3125" />
-                            <point x="0.484375" y="0.984375" />
+                            <point x="0.222222" y="0.120419" />
+                            <point x="0.581197" y="0" />
+                            <point x="0.991453" y="0.497382" />
+                            <point x="0.495726" y="0.963351" />
+                            <point x="0.00854701" y="0.743455" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -488,6 +491,11 @@
         </object-type>
         <object-type name="background_rivermud" sid="405516585109927">
             <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="338615761933749">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
             <animation-folder>
                 <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="134095484715395" speed="5">
                     <frame duration="1" hotspotX="0.500312" hotspotY="0.5" original-source="E:\git\mosquitosapomacaco\img\rascunhos\background_rivermud.png">
@@ -501,11 +509,75 @@
                 </animation>
             </animation-folder>
         </object-type>
+        <object-type name="background_river_transition" sid="274014935019146">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Bullet" sid="955326441693497">
+                    <behavior id="Bullet" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="815727892247412" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.501577" original-source="E:\git\mosquitosapomacaco\img\rascunhos\background_river_transition.png">
+                        <collision-poly>
+                            <point x="0.163352" y="0.362776" />
+                            <point x="0.5" y="0.334385" />
+                            <point x="0.947443" y="0.116719" />
+                            <point x="0.988636" y="0.498423" />
+                            <point x="0.927557" y="0.839117" />
+                            <point x="0.5" y="1" />
+                            <point x="0.00142045" y="0.996845" />
+                            <point x="0.411932" y="0.498423" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Audio" sid="237878369196952">
+            <plugin id="Audio" />
+        </object-type>
+        <object-type name="marca_mosquito" sid="514427711517616">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="654812727829347" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.506494" original-source="E:\git\mosquitosapomacaco\img\rascunhos\marca_mosquito.png">
+                        <collision-poly>
+                            <point x="0.111111" y="0.103896" />
+                            <point x="0.5" y="0.038961" />
+                            <point x="0.875" y="0.116883" />
+                            <point x="1" y="0.493506" />
+                            <point x="0.833333" y="0.844156" />
+                            <point x="0.5" y="0.974026" />
+                            <point x="0.166667" y="0.844156" />
+                            <point x="0" y="0.493506" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="marca_macaco" sid="433202520770588">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="295580390687976" speed="5">
+                    <frame duration="1" hotspotX="0.506849" hotspotY="0.506849" original-source="E:\git\mosquitosapomacaco\img\rascunhos\marca_macaco.png">
+                        <collision-poly>
+                            <point x="0.150685" y="0.150685" />
+                            <point x="0.493151" y="0.0136986" />
+                            <point x="0.849315" y="0.150685" />
+                            <point x="0.986301" y="0.493151" />
+                            <point x="0.849315" y="0.849315" />
+                            <point x="0.493151" y="1" />
+                            <point x="0.150685" y="0.849315" />
+                            <point x="0" y="0.493151" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
     </object-folder>
     <families />
     <layout-folder>
         <layout>Layout 1.xml</layout>
-        <layout>Layout 2.xml</layout>
     </layout-folder>
     <event-folder>
         <event-sheet>Event sheet 1.xml</event-sheet>
@@ -519,6 +591,20 @@
         </global-instance>
         <global-instance type="Function" uid="10" />
         <global-instance type="Mouse" uid="15" />
+        <global-instance type="Audio" uid="55">
+            <properties>
+                <timescale-audio>Off</timescale-audio>
+                <saveload>All</saveload>
+                <play-in-background>No</play-in-background>
+                <positioned-audio></positioned-audio>
+                <panning-model>HRTF</panning-model>
+                <distance-model>Inverse</distance-model>
+                <listener-z-height>600</listener-z-height>
+                <reference-distance>600</reference-distance>
+                <maximum-distance>10000</maximum-distance>
+                <roll-off-factor>1</roll-off-factor>
+            </properties>
+        </global-instance>
     </global-instances>
     <sounds-folder />
     <music-folder />
