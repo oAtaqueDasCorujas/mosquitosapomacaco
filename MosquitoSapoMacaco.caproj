@@ -1,0 +1,306 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2project>
+    <name>MosquitoSapoMacaco</name>
+    <description></description>
+    <version>1.0.0.0</version>
+    <author></author>
+    <author-email></author-email>
+    <author-website>http://</author-website>
+    <app-id>com.mycompany.myapp</app-id>
+    <unique-id>2m2oqhlgof90t</unique-id>
+    <saved-with-version>25200</saved-with-version>
+    <used-plugins>
+        <plugin author="Scirra" id="Function" version="1">Function</plugin>
+        <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
+        <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
+        <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
+        <plugin author="Scirra" id="Text" version="1">Text</plugin>
+        <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
+        <plugin author="Scirra" id="Touch" version="1">Touch</plugin>
+    </used-plugins>
+    <used-behaviors>
+        <behavior author="Scirra" id="Bullet" version="1">Bullet</behavior>
+        <behavior author="Scirra" id="Pathfinding" version="1">Pathfinding</behavior>
+        <behavior author="Scirra" id="Pin" version="1">Pin</behavior>
+        <behavior author="Scirra" id="Platform" version="1">Platform</behavior>
+        <behavior author="Scirra" id="Sin" version="1">Sine</behavior>
+        <behavior author="Scirra" id="bound" version="1">Bound to layout</behavior>
+        <behavior author="Scirra" id="solid" version="1">Solid</behavior>
+        <behavior author="Scirra" id="wrap" version="1">Wrap</behavior>
+    </used-behaviors>
+    <used-effects />
+    <configurations>
+        <configuration exporter-descname="HTML5" exporter-id="html5" name="HTML5" />
+    </configurations>
+    <window-size>
+        <width>854</width>
+        <height>480</height>
+    </window-size>
+    <pixel-rounding>0</pixel-rounding>
+    <preview-effects>1</preview-effects>
+    <first-layout>Layout 1</first-layout>
+    <use-loader-layout>0</use-loader-layout>
+    <configuration-settings>
+        <prop name="Clear background">Yes</prop>
+        <prop name="Downscaling">Medium quality</prop>
+        <prop name="Enable WebGL">On</prop>
+        <prop name="Fullscreen in browser">Letterbox scale</prop>
+        <prop name="Fullscreen scaling">High quality</prop>
+        <prop name="Loader style">Percentage text</prop>
+        <prop name="Orientations">Landscape</prop>
+        <prop name="Pause on unfocus">No</prop>
+        <prop name="Physics engine">Box2D asm.js</prop>
+        <prop name="Preview browser">(default)</prop>
+        <prop name="Sampling">Linear</prop>
+        <prop name="Use high-DPI display">Yes</prop>
+    </configuration-settings>
+    <object-folder>
+        <object-type name="Sapo" sid="723033772375131">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Platform" sid="443610275041094">
+                    <behavior id="Platform" />
+                </behavior-type>
+                <behavior-type name="BoundToLayout" sid="526824280862851">
+                    <behavior id="bound" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="676379260840186" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.88806" original-source="E:\git\mosquitosapomacaco\img\rascunhos\ss2_all.png">
+                        <image-point name="Lingua" x="0.503906" y="0.380597" />
+                        <collision-poly>
+                            <point x="0.503572" y="0" />
+                            <point x="1" y="0.283582" />
+                            <point x="0.746428" y="0.932836" />
+                            <point x="0.598214" y="0.955224" />
+                            <point x="0.503571" y="0.738806" />
+                            <point x="0.414286" y="0.936567" />
+                            <point x="0.228571" y="0.925373" />
+                            <point x="0" y="0.261194" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="TiledBackground" sid="143733107596793">
+            <plugin id="TiledBg" />
+            <behaviors>
+                <behavior-type name="Solid" sid="395756915372289">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <texture />
+        </object-type>
+        <object-type name="Mosquito" sid="801981519026968">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="988052319240546">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="304051464438396">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Pathfinding" sid="277460789099107">
+                    <behavior id="Pathfinding" />
+                </behavior-type>
+                <behavior-type name="Wrap" sid="704339064569983">
+                    <behavior id="wrap" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="101157521810829" speed="50">
+                    <frame duration="1" hotspotX="0.518293" hotspotY="0.480226" original-source="E:\git\mosquitosapomacaco\img\rascunhos\aa_001.png">
+                        <collision-poly>
+                            <point x="0.22561" y="0.039548" />
+                            <point x="0.52439" y="0.327684" />
+                            <point x="0.829268" y="0.112994" />
+                            <point x="0.695122" y="0.40113" />
+                            <point x="0.682927" y="0.706215" />
+                            <point x="0.481707" y="0.858757" />
+                            <point x="0.365854" y="0.661017" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.50625" hotspotY="0.480226" original-source="E:\git\mosquitosapomacaco\img\rascunhos\aa_003.png">
+                        <collision-poly>
+                            <point x="0.11875" y="0.163842" />
+                            <point x="0.5" y="0.327684" />
+                            <point x="0.925" y="0.220339" />
+                            <point x="0.65625" y="0.497175" />
+                            <point x="0.675" y="0.672316" />
+                            <point x="0.475" y="0.853107" />
+                            <point x="0.3625" y="0.672316" />
+                        </collision-poly>
+                    </frame>
+                    <frame duration="1" hotspotX="0.50625" hotspotY="0.474576" original-source="E:\git\mosquitosapomacaco\img\rascunhos\aa_005.png">
+                        <collision-poly>
+                            <point x="0.05625" y="0.299435" />
+                            <point x="1" y="0.355932" />
+                            <point x="0.70625" y="0.446328" />
+                            <point x="0.68125" y="0.711864" />
+                            <point x="0.4625" y="0.875706" />
+                            <point x="0.30625" y="0.480226" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Arvore" sid="354313221722437">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="438590178336702" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.34375" y="0.15625" />
+                            <point x="0.65625" y="0.3125" />
+                            <point x="0.484375" y="0.984375" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="lingua" sid="191514908152992">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Pin" sid="795315212728064">
+                    <behavior id="Pin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="14" loop="0" name="Default" pingpong="1" repeatcount="1" repeatto="0" sid="166365506030912" speed="30">
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                    <frame duration="1" hotspotX="0" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Keyboard" sid="663127971322612">
+            <plugin id="Keyboard" />
+        </object-type>
+        <object-type name="Touch" sid="826337367536760">
+            <plugin id="Touch" />
+        </object-type>
+        <object-type name="Function" sid="142960824725938">
+            <plugin id="Function" />
+        </object-type>
+        <object-type name="Sprite" sid="998807467891914">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="922813999475619">
+                    <behavior id="Sin" />
+                </behavior-type>
+                <behavior-type name="Bullet" sid="833365125918063">
+                    <behavior id="Bullet" />
+                </behavior-type>
+                <behavior-type name="Wrap" sid="222849142143888">
+                    <behavior id="wrap" />
+                </behavior-type>
+                <behavior-type name="Solid" sid="876397521969411">
+                    <behavior id="solid" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="849701967130118" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5">
+                        <collision-poly>
+                            <point x="0.31" y="0.248" />
+                            <point x="0.5" y="0.228" />
+                            <point x="0.63" y="0.296" />
+                            <point x="0.93" y="0.5" />
+                            <point x="0.735" y="0.788" />
+                            <point x="0.5" y="0.716" />
+                            <point x="0.305" y="0.756" />
+                            <point x="0.115" y="0.5" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Mouse" sid="190533158371138">
+            <plugin id="Mouse" />
+        </object-type>
+        <object-type name="Macacos" sid="233548688594208">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Mosquitos" sid="123543915703249">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Tempo" sid="405624075519505">
+            <plugin id="Text" />
+        </object-type>
+        <object-type name="Spaw" sid="714379415202698">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="552952878402459">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="313535179309334" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Particles" sid="133678674734915">
+            <plugin id="Particles" />
+            <texture />
+        </object-type>
+        <object-type name="background" sid="957921403672386">
+            <plugin id="Sprite" />
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="913232755125010" speed="5">
+                    <frame duration="1" hotspotX="0.500312" hotspotY="0.500555" original-source="E:\git\mosquitosapomacaco\img\rascunhos\background.png">
+                        <collision-poly>
+                            <point x="0.00062461" y="0.00110988" />
+                            <point x="0.999375" y="0.00110988" />
+                            <point x="1" y="1" />
+                            <point x="0" y="1" />
+                        </collision-poly>
+                    </frame>
+                </animation>
+            </animation-folder>
+        </object-type>
+    </object-folder>
+    <families />
+    <layout-folder>
+        <layout>Layout 1.xml</layout>
+        <layout>Layout 2.xml</layout>
+    </layout-folder>
+    <event-folder>
+        <event-sheet>Event sheet 1.xml</event-sheet>
+    </event-folder>
+    <global-instances>
+        <global-instance type="Keyboard" uid="4" />
+        <global-instance type="Touch" uid="9">
+            <properties>
+                <use-mouse-input>Yes</use-mouse-input>
+            </properties>
+        </global-instance>
+        <global-instance type="Function" uid="10" />
+        <global-instance type="Mouse" uid="15" />
+    </global-instances>
+    <sounds-folder />
+    <music-folder />
+    <files-folder>
+        <file-folder name="Icons">
+            <file name="icon-16.png" />
+            <file name="icon-32.png" />
+            <file name="icon-114.png" />
+            <file name="icon-128.png" />
+            <file name="icon-256.png" />
+            <file name="loading-logo.png" />
+        </file-folder>
+    </files-folder>
+</c2project>
