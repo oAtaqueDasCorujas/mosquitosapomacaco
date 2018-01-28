@@ -13,6 +13,7 @@
         <plugin author="Scirra" id="Function" version="1">Function</plugin>
         <plugin author="Scirra" id="Keyboard" version="1">Keyboard</plugin>
         <plugin author="Scirra" id="Mouse" version="1">Mouse</plugin>
+        <plugin author="Scirra" id="Particles" version="1">Particles</plugin>
         <plugin author="Scirra" id="Sprite" version="1">Sprite</plugin>
         <plugin author="Scirra" id="Text" version="1">Text</plugin>
         <plugin author="Scirra" id="TiledBg" version="1">Tiled Background</plugin>
@@ -106,26 +107,34 @@
                 <animation framecount="3" loop="1" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="101157521810829" speed="50">
                     <frame duration="1" hotspotX="0.518293" hotspotY="0.480226" original-source="E:\git\mosquitosapomacaco\img\rascunhos\aa_001.png">
                         <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
+                            <point x="0.22561" y="0.039548" />
+                            <point x="0.52439" y="0.327684" />
+                            <point x="0.829268" y="0.112994" />
+                            <point x="0.695122" y="0.40113" />
+                            <point x="0.682927" y="0.706215" />
+                            <point x="0.481707" y="0.858757" />
+                            <point x="0.365854" y="0.661017" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.50625" hotspotY="0.480226" original-source="E:\git\mosquitosapomacaco\img\rascunhos\aa_003.png">
                         <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
+                            <point x="0.11875" y="0.163842" />
+                            <point x="0.5" y="0.327684" />
+                            <point x="0.925" y="0.220339" />
+                            <point x="0.65625" y="0.497175" />
+                            <point x="0.675" y="0.672316" />
+                            <point x="0.475" y="0.853107" />
+                            <point x="0.3625" y="0.672316" />
                         </collision-poly>
                     </frame>
                     <frame duration="1" hotspotX="0.50625" hotspotY="0.474576" original-source="E:\git\mosquitosapomacaco\img\rascunhos\aa_005.png">
                         <collision-poly>
-                            <point x="1" y="1" />
-                            <point x="0" y="1" />
-                            <point x="0" y="0" />
-                            <point x="1" y="0" />
+                            <point x="0.05625" y="0.299435" />
+                            <point x="1" y="0.355932" />
+                            <point x="0.70625" y="0.446328" />
+                            <point x="0.68125" y="0.711864" />
+                            <point x="0.4625" y="0.875706" />
+                            <point x="0.30625" y="0.480226" />
                         </collision-poly>
                     </frame>
                 </animation>
@@ -227,6 +236,23 @@
         </object-type>
         <object-type name="TiledBackground2" sid="806395473523925">
             <plugin id="TiledBg" />
+            <texture />
+        </object-type>
+        <object-type name="Spaw" sid="714379415202698">
+            <plugin id="Sprite" />
+            <behaviors>
+                <behavior-type name="Sine" sid="552952878402459">
+                    <behavior id="Sin" />
+                </behavior-type>
+            </behaviors>
+            <animation-folder>
+                <animation framecount="1" loop="0" name="Default" pingpong="0" repeatcount="1" repeatto="0" sid="313535179309334" speed="5">
+                    <frame duration="1" hotspotX="0.5" hotspotY="0.5" />
+                </animation>
+            </animation-folder>
+        </object-type>
+        <object-type name="Particles" sid="133678674734915">
+            <plugin id="Particles" />
             <texture />
         </object-type>
     </object-folder>

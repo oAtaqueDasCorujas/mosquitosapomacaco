@@ -4,6 +4,7 @@
     <name>Event sheet 1</name>
     <events>
         <variable constant="0" name="Mosquitos" sid="607323536329880" static="0" type="number">0</variable>
+        <variable constant="0" name="Tempo" sid="866117414467752" static="0" type="number">0</variable>
         <variable constant="0" name="Macacos" sid="660767469218376" static="0" type="number">0</variable>
         <event-block sid="699589951753312">
             <conditions>
@@ -79,7 +80,7 @@
         </event-group>
         <event-group description="" sid="968742395462462" title="Mosquito">
             <sub-events>
-                <variable constant="0" name="MosquitoSpaw" sid="780592129947200" static="0" type="number">2</variable>
+                <variable constant="0" name="MosquitoSpaw" sid="780592129947200" static="0" type="number">5</variable>
                 <event-block sid="585022431561488">
                     <conditions>
                         <condition id="-2" name="Compare Y" sid="635878180607743" type="Mosquito">
@@ -105,6 +106,13 @@
                         </action>
                         <action id="-6" name="Set height" sid="803667906790376" type="Mosquito">
                             <param id="0" name="Height">Mosquito.Height*0.9</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="975382773811186" type="System">
+                            <param id="0" name="Variable">Tempo</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="793310465342026" type="Tempo">
+                            <param id="0" name="Text">Tempo</param>
                         </action>
                     </actions>
                 </event-block>
@@ -132,9 +140,9 @@
                                 </condition>
                             </conditions>
                             <actions>
-                                <action id="-9" name="Set value" sid="249586456905384" type="System">
+                                <action id="-10" name="Add to" sid="249586456905384" type="System">
                                     <param id="0" name="Variable">Macacos</param>
-                                    <param id="1" name="Value">Macacos+1</param>
+                                    <param id="1" name="Value">1</param>
                                 </action>
                                 <action id="0" name="Set text" sid="599883103259836" type="Macacos">
                                     <param id="0" name="Text">&quot;Macacos Mortos : &quot;&amp;Macacos</param>
@@ -144,17 +152,31 @@
                         </event-block>
                     </sub-events>
                 </event-block>
-                <event-block disabled="1" sid="133581294098944">
+                <event-block sid="133581294098944">
                     <conditions>
                         <condition id="-6" name="Every X seconds" sid="573500562524765" type="System">
                             <param id="0" name="Interval (seconds)">MosquitoSpaw</param>
                         </condition>
                     </conditions>
                     <actions>
-                        <action id="0" name="Spawn another object" sid="701181704333069" type="Mosquito">
-                            <param id="0" name="Object">Mosquito</param>
-                            <param id="1" name="Layer">0</param>
-                            <param id="2" name="Image point">0</param>
+                        <action id="0" name="Call function" sid="248569019428588" type="Function">
+                            <param id="0" name="Name">&quot;Mosquito&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="391638623389994">
+                    <conditions>
+                        <condition id="-8" name="Compare two values" sid="310050679645646" type="System">
+                            <param id="0" name="First value">Tempo/Macacos</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Second value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="204303521709096" type="System">
+                            <param id="0" name="Variable">MosquitoSpaw</param>
+                            <param id="1" name="Value">1</param>
                         </action>
                     </actions>
                 </event-block>
@@ -169,13 +191,22 @@
                         </condition>
                     </conditions>
                     <actions>
+                        <action id="0" name="Spawn another object" sid="560079208676513" type="Mosquito">
+                            <param id="0" name="Object">Particles</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
                         <action id="-9" name="Destroy" sid="360672065108308" type="Mosquito" />
+                        <action id="-10" name="Add to" sid="804869172993881" type="System">
+                            <param id="0" name="Variable">Mosquitos</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
                         <action id="0" name="Set text" sid="750000446116479" type="Mosquitos">
                             <param id="0" name="Text">&quot;Mosquitos Comidos : &quot;&amp;Mosquitos</param>
                         </action>
-                        <action id="-9" name="Set value" sid="804869172993881" type="System">
-                            <param id="0" name="Variable">Mosquitos</param>
-                            <param id="1" name="Value">Mosquitos+1</param>
+                        <action id="0" name="Call function" sid="605661269963088" type="Function">
+                            <param id="0" name="Name">&quot;Mosquito&quot;</param>
+                            <param id="1" name="Parameter {n}"></param>
                         </action>
                     </actions>
                 </event-block>
@@ -210,6 +241,34 @@
                         <action id="-4" name="Set position to another object" sid="342448178836031" type="lingua">
                             <param id="0" name="Object">Sapo</param>
                             <param id="1" name="Image point (optional)">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="960505320820655" title="Funções">
+            <sub-events>
+                <variable constant="0" name="magnitudeMax" sid="356338463555505" static="0" type="number">20</variable>
+                <variable constant="0" name="magnitudeMin" sid="226798915546651" static="0" type="number">50</variable>
+                <variable constant="0" name="speedMax" sid="388816338936134" static="0" type="number">400</variable>
+                <variable constant="0" name="speedMin" sid="860574666634108" static="0" type="number">100</variable>
+                <event-block sid="622723129773380">
+                    <conditions>
+                        <condition id="0" name="On function" sid="931195914915199" type="Function">
+                            <param id="0" name="Name">&quot;Mosquito&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Spawn another object" sid="558972247970495" type="Spaw">
+                            <param id="0" name="Object">Mosquito</param>
+                            <param id="1" name="Layer">0</param>
+                            <param id="2" name="Image point">0</param>
+                        </action>
+                        <action behavior="Bullet" id="0" name="Set speed" sid="329245955604474" type="Mosquito">
+                            <param id="0" name="Speed">random(speedMin,speedMax)</param>
+                        </action>
+                        <action behavior="Sine" id="2" name="Set magnitude" sid="867938881720511" type="Mosquito">
+                            <param id="0" name="Magnitude">random(magnitudeMin,magnitudeMax)</param>
                         </action>
                     </actions>
                 </event-block>
