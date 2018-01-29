@@ -67,12 +67,16 @@
                 </condition>
             </conditions>
             <actions>
-                <action id="-2" name="Go to layout" sid="489546354238950" type="System">
-                    <param id="0" name="Layout">Layout 1</param>
-                </action>
                 <action id="-9" name="Set value" sid="484094720974139" type="System">
                     <param id="0" name="Variable">Tempo</param>
                     <param id="1" name="Value">30</param>
+                </action>
+                <action id="-9" name="Set value" sid="178142231570058" type="System">
+                    <param id="0" name="Variable">Reparos</param>
+                    <param id="1" name="Value">6</param>
+                </action>
+                <action id="-2" name="Go to layout" sid="489546354238950" type="System">
+                    <param id="0" name="Layout">Layout 1</param>
                 </action>
             </actions>
         </event-block>
